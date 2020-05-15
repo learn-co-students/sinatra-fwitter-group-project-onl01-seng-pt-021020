@@ -1,0 +1,23 @@
+<h1>Log In to Your Account</h1>
+
+<% if flash %>
+  <h3><%= flash[:message] %></h3>
+<% end %>
+
+<form action="/login" method="POST">
+
+  <h2>
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username">
+  </h2>
+
+  <h2>
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="password">
+  </h2>
+
+  <button type="submit" id="submit">Log In</button>
+
+</form>
+
+<p>Don't have an account yet? <a href="/signup">Sign Up</a> today!</p>
