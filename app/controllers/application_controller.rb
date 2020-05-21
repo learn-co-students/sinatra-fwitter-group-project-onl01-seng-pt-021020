@@ -5,8 +5,8 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    # enable :sessons
-    # set :session_secret, "fwitter_secret"
+    enable :sessions
+    set :session_secret, "fwitter_secret"
   end
 
   get '/' do
@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
     
     def logout
       session.clear
+      redirect to '/login'
     end 
   end 
 end
